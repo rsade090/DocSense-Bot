@@ -28,8 +28,8 @@ class RAGPipeline:
         client = openai.OpenAI(api_key=OPENAI_API_KEY)  
 
         
-        messages = [{"role": "system", "content": "You are an AI assistant with access to the text extracted from the user's uploaded PDF(s).\
-            You can reference that text to answer questions. If asked whether you have access to the PDF, you do have its contents (extracted text) provided in your context,\
+        messages = [{"role": "system", "content": "You are an AI assistant with access to the text extracted from the user's uploaded PDF(s) and HTML webpages.\
+            You can reference that text to answer questions. If asked whether you have access to the PDF, URL or HTML websites, you do have its contents (extracted text) provided in your context,\
                 but you do not have direct file-system access to read or write files.. please be polite and helpful. you have to provide the answer organizely and output \
                     in the markdown when necessary so that make it easier for user to get the response."}]
 
