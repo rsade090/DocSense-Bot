@@ -1,8 +1,8 @@
-# DocSense bot
+# Content Navigator
 
 ##  Overview
 
-DocSense Bot is a Streamlit-based web application that leverages **Retrieval Augmented Generation (RAG)**, integrating semantic and keyword-based search for efficient information retrieval. It utilizes **Whoosh** for keyword-based search and **ChromaDB** for vector-based semantic search, combined with **OpenAI's GPT-4o** for generative response generation. The system processes **PDF and HTML webpages**, enabling users to extract meaningful insights through real-time queries.
+Content Navigator is a Streamlit-based web application that leverages **Retrieval Augmented Generation (RAG)**, integrating semantic and keyword-based search for efficient information retrieval. It utilizes **Whoosh** for keyword-based search and **ChromaDB** for vector-based semantic search, combined with **OpenAI's GPT-4o** for generative response generation. The system processes **PDF and HTML webpages**, enabling users to extract meaningful insights through real-time queries.
 
 ### Key Components
 - **Whoosh**: Optimized for high-speed, full-text keyword search.
