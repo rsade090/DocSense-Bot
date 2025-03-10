@@ -4,87 +4,58 @@
 
 ## 🚀 Overview
 
-This project is a **Retrieval Augmented Generation (RAG) system** designed to process and extract insights from uploaded documents using **semantic and keyword-based search**. It leverages **OpenAI's GPT-4o** for response generation and supports **document ingestion from PDFs and HTML web pages**.
+This project is an advanced **Retrieval Augmented Generation (RAG) system** that integrates **semantic and keyword-based search** for efficient information retrieval. It leverages **Whoosh** for keyword-based search and **ChromaDB** for vector-based semantic search, combined with **OpenAI's GPT-4o** for generative response generation. The system processes **PDF and HTML documents**, enabling users to extract meaningful insights through real-time queries.
 
-The application is built with:
-
-- **Whoosh** for keyword-based search
-- **ChromaDB** for semantic retrieval
-- **LangChain** for document processing
-- **Streamlit** for an intuitive web-based interface
+### Key Components
+- **Whoosh**: Optimized for high-speed, full-text keyword search.
+- **ChromaDB**: Handles dense vector-based semantic search.
+- **LangChain**: Manages document processing and query transformation.
+- **Streamlit**: Provides an interactive, minimal-latency user interface.
 
 ## 🛠 Features
 
-- 🔍 **Dual Search Mode**: Supports both **keyword-based** and **semantic** search.
-- 📝 **Document Upload & Indexing**: Allows users to upload **PDFs and HTML webpages**.
-- 🌐 **Streaming Output**: Real-time response streaming for a seamless user experience.
-- ⚡ **Optimized Performance**: Efficient indexing and retrieval mechanisms.
+- **Hybrid Search Mechanism**: Supports both **keyword-based** (lexical) and **semantic** (vectorized) search.
+- **Adaptive Chunking & Indexing**: Implements dynamic document segmentation for optimized retrieval.
+- **Streaming Response Generation**: Real-time AI-powered answer streaming via GPT-4o.
+- **Scalable Architecture**: Efficient document processing with parallel indexing.
+- **File Ingestion Support**: Accepts **PDF and HTML webpages** for analysis.
 
-## 📎 Project Structure
-
-```
-├── app.py               # Streamlit-based frontend for user interaction
-├── search_engine.py     # Implements keyword (Whoosh) and semantic (ChromaDB) search
-├── rag_pipeline.py      # RAG pipeline integrating retrieval and response generation
-├── document_loader.py   # Handles text extraction from PDFs and HTML
-├── .env                 # Stores API keys (not included for security reasons)
-```
-
-## 🏠 Installation
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/rag-application.git
-cd rag-application
-```
-
-### 2️⃣ Set Up Environment
-
-Ensure **Python 3.8+** is installed. Install dependencies:
-
+## 🔧 Installation
+Install dependencies, set up API keys, and run the project:
 ```bash
 pip install -r requirements.txt
+env
+OPENAI_API_KEY=your_openai_api_key
+streamlit run app.py
 ```
-
-Create a **.env** file for OpenAI API:
-
+Configure OpenAI API key in a **.env** file:
 ```env
 OPENAI_API_KEY=your_openai_api_key
+
 ```
 
 ### 3️⃣ Run the Application
-
 ```bash
 streamlit run app.py
 ```
+Access the interface at `http://localhost:8501`.
 
-Access the web interface at `http://localhost:8501`.
+## 📝 Usage Guide
 
-## 📝 Usage
+1️⃣ **Upload a document (PDF/HTML) or provide a URL.**
+2️⃣ **Select search mode:**
+   - **Keyword-based Search** (Exact term matching)
+   - **Semantic Search** (Contextual understanding)
+3️⃣ **Query the document in natural language.**
+4️⃣ **Receive AI-generated answers in real time.**
 
-1️⃣ **Upload a PDF or enter a website URL**\
-2️⃣ **Select search type** (Keyword or Semantic)\
-3️⃣ **Ask questions** based on the document\
-4️⃣ **Get real-time AI-generated answers**
+## ⚡ Performance Enhancements
 
-## 🏆 Enhancements & Optimizations
+- **Optimized Query Pipeline**: Reduces latency through batch embeddings.
+- **Efficient Index Management**: Minimizes disk I/O overhead.
+- **Real-time Adaptive Response Streaming**: Uses incremental token generation.
+- **Token Usage Optimization**: Restricts context window to essential document segments.
 
-- ✅ **Chunked Document Processing** for better retrieval efficiency
-- ✅ **Real-time Streaming Responses** using GPT-4o
-- ✅ **Search Performance Enhancements** (indexing optimizations)
 
-## 📌 Future Improvements
 
-- 🔄 Support for additional file formats (e.g., Word, Markdown)
-- 🎯 Fine-tuning retrieval quality using hybrid search techniques
-- 🏃️ Caching for improved performance
-
-## 🐜 License
-
-MIT License © 2025
-
----
-
-🌟 **Built by [Your Name]** – Passionate about AI & NLP!
 
