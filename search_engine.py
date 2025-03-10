@@ -1,5 +1,4 @@
 import os
-import shutil
 import time
 import whoosh.index as index
 from whoosh.fields import Schema, TEXT

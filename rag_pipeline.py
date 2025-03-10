@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 import openai
-import requests
 from search_engine import SearchEngine
 
 

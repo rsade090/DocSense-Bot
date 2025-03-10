@@ -1,7 +1,5 @@
-import fitz  
+
 from bs4 import BeautifulSoup
-import tempfile  
-import pytesseract
 from PIL import Image
 import io
 import pdfplumber
