@@ -1,5 +1,3 @@
-# Content-Navigator
-
 # 📚 Retrieval Augmented Generation (RAG) Application
 
 ## 🚀 Overview
@@ -12,7 +10,7 @@ This project is an advanced **Retrieval Augmented Generation (RAG) system** that
 - **LangChain**: Manages document processing and query transformation.
 - **Streamlit**: Provides an interactive, minimal-latency user interface.
 
-##  Features
+## 🛠 Features
 
 - **Hybrid Search Mechanism**: Supports both **keyword-based** (lexical) and **semantic** (vectorized) search.
 - **Adaptive Chunking & Indexing**: Implements dynamic document segmentation for optimized retrieval.
@@ -20,41 +18,26 @@ This project is an advanced **Retrieval Augmented Generation (RAG) system** that
 - **Scalable Architecture**: Efficient document processing with parallel indexing.
 - **File Ingestion Support**: Accepts **PDF and HTML webpages** for analysis.
 
-##  Installation
-Install dependencies, set up API keys, and run the project:
+## 🔧 Installation
+
 ```bash
+git clone https://github.com/yourusername/rag-application.git
+cd rag-application
 pip install -r requirements.txt
-
-```
-Configure OpenAI API key in a **.env** file:
-```env
-OPENAI_API_KEY=your_openai_api_key
-
-```
-
-### 3️⃣ Run the Application
-```bash
+export OPENAI_API_KEY=your_openai_api_key
 streamlit run app.py
 ```
+
 Access the interface at `http://localhost:8501`.
 
 ## 📝 Usage Guide
 
-1️⃣ **Upload a document (PDF/HTML) or provide a URL.**
-
-2️⃣ **Select search mode:**
-   - **Keyword-based Search** (Exact term matching)
-   - **Semantic Search** (Contextual understanding)
-3️⃣ **Query the document in natural language.**
-4️⃣ **Receive AI-generated answers in real time.**
-
-## ⚡ Performance Enhancements
-
-- **Optimized Query Pipeline**: Reduces latency through batch embeddings.
-- **Efficient Index Management**: Minimizes disk I/O overhead.
-- **Real-time Adaptive Response Streaming**: Uses incremental token generation.
-- **Token Usage Optimization**: Restricts context window to essential document segments.
-
+1️⃣ **Upload a document (PDF/HTML) or provide a URL.**  
+2️⃣ **Select search mode:**  
+   - **Keyword-based Search** (Exact term matching)  
+   - **Semantic Search** (Contextual understanding)  
+3️⃣ **Query the document in natural language.**  
+4️⃣ **Receive AI-generated answers in real time.**  
 
 
 
