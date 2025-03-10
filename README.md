@@ -40,12 +40,13 @@ Access the interface at `http://localhost:8501`.
 
 ## 📝 Usage Guide
 
--1️⃣ **Upload a document (PDF/HTML) or provide a URL.**
--2️⃣ **Select search mode:**
+1️⃣ **Upload a document (PDF/HTML) or provide a URL.**
+
+2️⃣ **Select search mode:**
    - **Keyword-based Search** (Exact term matching)
    - **Semantic Search** (Contextual understanding)
--3️⃣ **Query the document in natural language.**
--4️⃣ **Receive AI-generated answers in real time.**
+3️⃣ **Query the document in natural language.**
+4️⃣ **Receive AI-generated answers in real time.**
 
 ## ⚡ Performance Enhancements
 
