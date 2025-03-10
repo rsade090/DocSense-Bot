@@ -12,7 +12,7 @@ This project is an advanced **Retrieval Augmented Generation (RAG) system** that
 - **LangChain**: Manages document processing and query transformation.
 - **Streamlit**: Provides an interactive, minimal-latency user interface.
 
-## 🛠 Features
+##  Features
 
 - **Hybrid Search Mechanism**: Supports both **keyword-based** (lexical) and **semantic** (vectorized) search.
 - **Adaptive Chunking & Indexing**: Implements dynamic document segmentation for optimized retrieval.
@@ -20,13 +20,11 @@ This project is an advanced **Retrieval Augmented Generation (RAG) system** that
 - **Scalable Architecture**: Efficient document processing with parallel indexing.
 - **File Ingestion Support**: Accepts **PDF and HTML webpages** for analysis.
 
-## 🔧 Installation
+##  Installation
 Install dependencies, set up API keys, and run the project:
 ```bash
 pip install -r requirements.txt
-env
-OPENAI_API_KEY=your_openai_api_key
-streamlit run app.py
+
 ```
 Configure OpenAI API key in a **.env** file:
 ```env
