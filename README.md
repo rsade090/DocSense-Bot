@@ -27,8 +27,6 @@ export OPENAI_API_KEY=your_openai_api_key
 streamlit run app.py
 ```
 
-Access the interface at `http://localhost:8501`.
-
 ## Usage Guide
 
 1️⃣ **Upload a document (PDF/HTML) or provide a URL.**  
