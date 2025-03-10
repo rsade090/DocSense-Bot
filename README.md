@@ -29,7 +29,7 @@ streamlit run app.py
 
 ## Usage Guide
 
-1️⃣ **Upload a document (PDF/HTML) or provide a URL.**  
+1️⃣ **Upload a document (PDF) or provide a URL.**  
 2️⃣ **Select search mode:**  **Keyword-based Search** (Exact term matching)  and  **Semantic Search** (Contextual understanding)  
 3️⃣ **Query the document in natural language.**  
 4️⃣ **Receive AI-generated answers in real time.**  
