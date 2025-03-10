@@ -1,4 +1,4 @@
-# 📚 Retrieval Augmented Generation (RAG) Application
+# DocSense bot
 
 ##  Overview
 
