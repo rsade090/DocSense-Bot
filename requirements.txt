@@ -10,5 +10,3 @@ tiktoken
 requests
 pdfplumber
 Pillow
-shutil
-re
