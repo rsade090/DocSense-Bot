@@ -1,0 +1,14 @@
+streamlit
+langchain
+chromadb
+openai
+pymupdf
+beautifulsoup4
+python-dotenv
+whoosh
+tiktoken
+requests
+pdfplumber
+Pillow
+shutil
+re

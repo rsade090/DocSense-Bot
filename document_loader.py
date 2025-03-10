@@ -21,7 +21,7 @@ class DocumentLoader:
 
 
     def extract_text(self):
-        """Detects file type and extracts text accordingly."""
+        
         if self.file_type == "pdf":
             return self.extract_text_from_pdf()
         elif self.file_type == "link":
@@ -39,7 +39,7 @@ class DocumentLoader:
         return text
 
     def extract_text_from_pdf(self):
-        """Extracts and cleans text from a PDF file using pdfplumber."""
+        
         text = []
 
         with pdfplumber.open(self.uploaded_file) as pdf:
@@ -58,14 +58,14 @@ class DocumentLoader:
 
 
     def extrac_text_from_link(self):
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         
         texts = text_splitter.split_documents(self.uploaded_file)
         texts = [str(doc.page_content) for doc in texts]
         return  " ".join(texts)
     
     def extract_text_from_html(self):
-        """Extracts text from an HTML file uploaded via Streamlit."""
+        
         content = self.uploaded_file.read().decode("utf-8")
         soup = BeautifulSoup(content, "html.parser")
         text = soup.get_text(separator="\n")

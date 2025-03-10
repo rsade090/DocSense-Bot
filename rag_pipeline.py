@@ -11,18 +11,18 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 class RAGPipeline:
     def __init__(self):
-        """Initialize RAG pipeline with search engine."""
+        
         self.search_engine = SearchEngine()
 
     def retrieve_relevant_text(self, query, search_type):
-        """Retrieve relevant document sections using search engine."""
+        
         if search_type == "Keyword":
             return self.search_engine.search_keyword(query)
         else:  # Semantic Search
             return self.search_engine.search_semantic(query)
 
     def generate_answer_openai(self, query, context, chat_history):
-        """Stream an answer from OpenAI GPT-4o using chat history for better context."""
+       #Stream an answer from OpenAI GPT-4o using chat history for better context.
         if not OPENAI_API_KEY:
             raise ValueError("Missing OpenAI API Key. Set it in the .env file.")
 
@@ -56,7 +56,7 @@ class RAGPipeline:
 
 
     def generate_answer(self, query, search_type, chat_history):
-        """Retrieve relevant text and stream an answer using the selected model, keeping chat history."""
+        #Retrieve relevant text and stream an answer 
         relevant_texts = self.retrieve_relevant_text(query, search_type)
         
         if not relevant_texts or not isinstance(relevant_texts, list):

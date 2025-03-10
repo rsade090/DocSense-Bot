@@ -24,12 +24,12 @@ INDEX_DIR = "index"
 
 class SearchEngine:
     def __init__(self):
-        """Initialize both keyword and semantic search engines."""
+        
         self.init_keyword_search()
         self.init_semantic_search()
 
     def init_keyword_search(self):
-        """Set up Whoosh keyword search index, ensuring it exists and handling lock issues."""
+        #Set up Whoosh keyword search index
         schema = Schema(content=TEXT(stored=True)) 
 
         if not os.path.exists(INDEX_DIR):
@@ -41,19 +41,19 @@ class SearchEngine:
         try:
             self.whoosh_index = index.open_dir(INDEX_DIR)
         except index.LockError:
-            print("⚠️ Whoosh index is locked. Removing lock file and retrying...")
+            print(" Whoosh index is locked. Removing lock file and retrying")
             self._remove_lock_file()
             self.whoosh_index = index.open_dir(INDEX_DIR)
 
     def _remove_lock_file(self):
-        """Force delete the Whoosh lock file if necessary."""
+        
         lock_file = os.path.join(INDEX_DIR, "_LOCK")
         if os.path.exists(lock_file):
             os.remove(lock_file)
             print("Lock file removed.")
 
     def add_document_to_keyword_index(self, text):
-        """Splits text into smaller chunks and adds them separately to Whoosh index, handling lock issues."""
+        
         # chunk_size = 300  # Adjust chunk size (characters)
         # text_chunks = [text[i:i+chunk_size].strip() + " " for i in range(0, len(text), chunk_size)]
         splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
@@ -68,7 +68,7 @@ class SearchEngine:
                 writer.commit()
                 return
             except index.LockError:
-                print(f"⚠️ Whoosh index is locked (attempt {attempt+1}/{max_retries}). Retrying in 1s...")
+                print(f" Whoosh index is locked (attempt {attempt+1}/{max_retries}). Retrying in 1s...")
                 self._remove_lock_file()
                 time.sleep(1)
         raise RuntimeError("Failed to acquire Whoosh lock after multiple attempts.")
@@ -87,8 +87,6 @@ class SearchEngine:
             frag = highlight.ContextFragmenter(surround=60, maxchars=500)
             frag.maxfrags = None  # Allow multiple fragments if the chunk has multiple matches
             results.fragmenter = frag
-
-
 
             all_matched_sentences = []
 
@@ -127,7 +125,7 @@ class SearchEngine:
             return [final_html]
 
     def init_semantic_search(self):
-        """Set up ChromaDB for semantic search."""
+    
         self.embedding_model = OpenAIEmbeddings()
         self.chroma_client = chromadb.Client()
         self.vectorstore = Chroma(
@@ -137,11 +135,10 @@ class SearchEngine:
         )
 
     def add_document_to_semantic_index(self, text):
-        """Adds extracted text to ChromaDB for semantic search."""
-
+        
         self.vectorstore.add_texts([text])
 
     def search_semantic(self, query):
-        """Performs semantic search using ChromaDB."""
+        
         results = self.vectorstore.similarity_search(query, k=5)
         return [r.page_content for r in results]

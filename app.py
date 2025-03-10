@@ -11,7 +11,7 @@ import requests
 
 
 def clean_html(raw_text):
-    """Remove unwanted HTML tags from text."""
+    #Remove unwanted HTML tags from text
     soup = BeautifulSoup(raw_text, "html.parser")
     return soup.get_text()
 
